@@ -12,3 +12,25 @@
     yum:
             name: httpd
             state: present
+  - name: Start & Enable httpd services
+    systemd:
+            name: httpd
+            state: started
+            enabled: true
+  - name: Install php
+    yum:
+            name: php
+            state: present
+  - name: Copy index page to document root
+    shell: cp /git-file/code-ws/index.php /var/www/html/
+  - name: Add firewall rule to enable port 80
+    firewalld:
+            state: enabled
+            permanent: yes
+            port: 80/tcp
+
+  - name: Add firewall rule to enable http
+    firewalld:
+            state: enabled
+            permanent: yes
+            service: http
