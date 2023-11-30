@@ -10,7 +10,8 @@ $ip=shell_exec('/usr/sbin/ifconfig');
 print $ip;
 echo "hii GeeksforGeeks"
 ?>
-Adding line to check jenkins 
+Adding line to check jenkins
+Made changes to build steps 
 </pre>	</h1> 
 </body> 
 </html>
