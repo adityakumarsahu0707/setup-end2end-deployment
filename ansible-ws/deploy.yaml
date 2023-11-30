@@ -1,0 +1,14 @@
+- hosts: web-server
+  tasks:
+  - name: Install Git
+    yum:
+          name: git
+          state: present
+  - name: Clone Git repo
+    git:
+          repo: https://github.com/adityakumarsahu0707/setup-end2end-deployment.git
+          dest: /git-file/
+  - name: Install Httpd
+    yum:
+            name: httpd
+            state: present
